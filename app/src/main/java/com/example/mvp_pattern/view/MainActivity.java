@@ -22,11 +22,6 @@ public class MainActivity extends AppCompatActivity implements MainView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-//        Americano americano = new Americano();
-//        CafeLatte cafeLatte = new CafeLatte();
-//        TotalPrice totalPrice = new TotalPrice();
-//
         americano_count = findViewById(R.id.americano_count);
         latte_count = findViewById(R.id.latte_count);
         total_result = findViewById(R.id.total_result);

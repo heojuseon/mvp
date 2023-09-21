@@ -29,7 +29,6 @@ public class MainPresenter implements Presenter{    //View interface를 전달 �
     public void upAmericano() { //아메리카노 수량 증가 버튼 입력이 들어왔을 때 View가 호출할 함수
         americanoModel.up();
         mainView.setAmericanoCounterText(americanoModel.getQuantity());
-//        updateTotalPriceAdd(americanoModel.getPrice());
         updateTotalPrice();
     }
 
@@ -38,19 +37,18 @@ public class MainPresenter implements Presenter{    //View interface를 전달 �
     public void downAmericano() {   //아메리카노 수량 감소 버튼 입력이 들어왔을 때 View가 호출할 함수
         americanoModel.down();
         mainView.setAmericanoCounterText((americanoModel.getQuantity()));
-//        updateTotalPriceSub(americanoModel.getPrice());
         updateTotalPrice();
     }
 
     @Override
-    public void upLatte() {
+    public void upLatte() { //카페라떼 수량 증가 버튼 입력이 들어왔을 때 View가 호출할 함수
         latteModel.up();
         mainView.setLatteCounterText(latteModel.getQuantity());
         updateTotalPrice();
     }
 
     @Override
-    public void downLatte() {
+    public void downLatte() {   //카페라떼 수량 감소 버튼 입력이 들어왔을 때 View 가 호출할 함수
         latteModel.down();
         mainView.setLatteCounterText(latteModel.getQuantity());
         updateTotalPrice();
@@ -58,15 +56,13 @@ public class MainPresenter implements Presenter{    //View interface를 전달 �
 
 
     private void updateTotalPrice() {
-//        int total_result = americanoModel.calculateTotalPrice() + latteModel.calculateTotalPrice();
-//        totalModel.setTotalPrice(total_result);
-//        mainView.setTotalPriceText(totalModel.getTotalPrice());
 
         int americanoTotalPrice = americanoModel.calculateTotalPrice();
         int latteTotalPrice = latteModel.calculateTotalPrice();
         int total_result = americanoTotalPrice + latteTotalPrice;
         totalModel.setTotalPrice(total_result);
-        mainView.setTotalPriceText(total_result);
+//        mainView.setTotalPriceText(total_result);
+        mainView.setTotalPriceText(totalModel.getTotalPrice());
     }
 
 
